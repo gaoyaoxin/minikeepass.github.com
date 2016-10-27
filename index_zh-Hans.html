@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>MiniKeePass</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="jquery-1.6.1.min.js"></script>
+<meta charset="UTF-8">
+<!-- Screenshot fade in/out -->
+<script type="text/javascript">
+  var elements;
+  var i = 0;
+
+  $(document).ready(function() {
+    elements = $("#iphone-screenshots img");
+    setTimeout("updateScreenshot()", 4000);
+  });
+
+  function updateScreenshot() {
+    $(elements[i]).fadeOut("slow");
+    i = (i + 1) % elements.length;
+    $(elements[i]).fadeIn("slow");
+
+    setTimeout("updateScreenshot()", 4000);
+  }
+</script>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19206376-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">
+      <div class="wrapper">
+        <div class="title">
+          <img src="logo.png" />
+        </div>
+
+        <div class="intro">
+          <h1>MiniKeePass</h1>
+          <p>你爱机上的安全密码储存软件，与KeePass兼容</p>
+          <p><a href="http://itunes.apple.com/us/app/minikeepass-secure-password/id451661808?ls=1&mt=8" target="itunes_store"><img src="appstore.png" alt="iTunes App Store" style="border: 0;"/></a></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wrapper">
+      <div id="page">
+        <h2>软件特色</h2>
+        <ul class="features">
+          <li>
+            <p>查看、编辑和创建KeePass 1.x 和 2.x 文件</p>
+          </li>
+          <li>
+            <p>借助iPhone上的Dropbox应用导入/导出文件至云端</p>
+          </li>
+          <li>
+            <p>将密码拷贝至剪切板以方便使用</p>
+          </li>
+          <li>
+            <p>在Safari中打开网站时，MiniKeePass软件仍可在后台保持运行</p>
+          </li>
+          <li>
+            <p>使用PIN码阻止对MiniKeePass的非法访问</p>
+          </li>
+          <li>
+            <p>使用iCloud 钥匙串储存数据库密码</p>
+          </li>
+        </ul>
+      </div>
+
+      <div id="iphone">
+        <div id="iphone-screenshots">
+          <img style="display:block;" src="screenshot0.png" />
+          <img style="display:none;" src="screenshot1.png" />
+          <img style="display:none;" src="screenshot2.png" />
+          <img style="display:none;" src="screenshot3.png" />
+          <img style="display:none;" src="screenshot4.png" />
+        </div>
+      </div>
+    </div>
+
+    <ul class="buttons"">
+      <li>
+        <a href="http://www.twitter.com/MiniKeePass"><img src="http://twitter-badges.s3.amazonaws.com/twitter-b.png" alt="Follow MiniKeePass on Twitter"/></a>
+	   </li>
+	   <li>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+          <input type="hidden" name="cmd" value="_donations">
+          <input type="hidden" name="business" value="minikeepass@gmail.com">
+          <input type="hidden" name="lc" value="US">
+          <input type="hidden" name="item_name" value="Support MiniKeePass">
+          <input type="hidden" name="no_note" value="0">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </li>
+    </ul>
+
+    <div id="footer">&copy; Copyright 2011 Flush Software.  All Rights Reserved</div>
+  </div>
+</body>
+</html>
